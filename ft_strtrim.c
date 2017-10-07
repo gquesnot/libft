@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 14:55:24 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:32:21 by gquesnot         ###   ########.fr       */
+/*   Created: 2017/10/07 21:10:45 by gquesnot          #+#    #+#             */
+/*   Updated: 2017/10/07 21:31:16 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
+char		*ft_strtrim(const char *s)
 {
-	char	*s1;
-	char	*s2;
-	char	c1;
 	int		i;
-
+	int		start;
+	int		size;
+	char	*tmp;
 
 	i = 0;
-	s1 = (char *)dest;
-	s2 = (char *)src;
-	c1 = (char)c;
-	if (n == 0 || s1 == s2)
-		return (s1);
-	while (n > 0)
-	{
-		*s1 = *s2;
-		if (*s1 == c1)
-			return (dest + i + 1);
-		s1 = s1 + 1;
-		s2 = s2 + 1;
-		i = i + 1;
-		n = n - 1;
-	}
-	return (NULL);
+	size = ft_strlen(s);
+	tmp = ft_strnew(size);
+	if (!(s) || !(tmp))
+		return (NULL);
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ',')
+		i += 1;
+	start = i;
+	i = 0;
+	size = size - 1;
+	while (s[size - i] == ' ' || s[size - i] == '\t' || s[size - i] == '\n' \
+			|| s[size - i] == ',')
+		i += 1;
+	tmp = ft_strsub(s, start , size - start - i + 1);
+	return (tmp);
 }

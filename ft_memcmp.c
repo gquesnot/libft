@@ -6,11 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 15:56:07 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 20:37:29 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:32:57 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int			ft_memcmp(const void *s1, const void *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 14:33:36 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/29 15:41:40 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:33:09 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void		*ft_memcpy(void *dest, const void *src, size_t n)
 {

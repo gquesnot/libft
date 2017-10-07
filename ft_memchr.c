@@ -6,11 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 15:43:18 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 20:37:05 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:32:42 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

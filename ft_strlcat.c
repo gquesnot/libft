@@ -6,11 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 19:33:24 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 19:55:55 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:35:27 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t		ft_strlcat(char *dest, const char *src, size_t n)
 {

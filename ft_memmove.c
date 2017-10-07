@@ -6,11 +6,10 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 15:18:00 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/29 15:42:46 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:33:15 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

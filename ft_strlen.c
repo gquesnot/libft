@@ -6,12 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 19:01:22 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 19:18:34 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:35:47 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t		ft_strlen(const char *s)
 {

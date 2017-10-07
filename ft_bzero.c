@@ -6,21 +6,13 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 12:28:15 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/29 12:34:48 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:49:47 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void		ft_bzero(void *s, size_t n)
 {
-	char	*temp;
-
-	temp = (char *)s;
-	while (n > 0)
-	{
-		*temp = 0;
-		temp = temp + 1;
-		n = n - 1;
-	}
+	ft_memset(s, 0, n);
 }

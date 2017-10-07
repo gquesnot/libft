@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 14:55:24 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:32:21 by gquesnot         ###   ########.fr       */
+/*   Created: 2017/10/07 20:36:31 by gquesnot          #+#    #+#             */
+/*   Updated: 2017/10/07 20:46:09 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
+char		*ft_strmap(const char *s, char (*f)(char))
 {
-	char	*s1;
-	char	*s2;
-	char	c1;
+	char	*tmp;
 	int		i;
 
-
 	i = 0;
-	s1 = (char *)dest;
-	s2 = (char *)src;
-	c1 = (char)c;
-	if (n == 0 || s1 == s2)
-		return (s1);
-	while (n > 0)
+	tmp = ft_strnew(ft_strlen(s));
+	while (s[i])
 	{
-		*s1 = *s2;
-		if (*s1 == c1)
-			return (dest + i + 1);
-		s1 = s1 + 1;
-		s2 = s2 + 1;
-		i = i + 1;
-		n = n - 1;
+		tmp[i] = f(s[i]);
+		i += 1;
 	}
-	return (NULL);
+	return (tmp);
 }

@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 14:42:28 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 22:58:49 by gquesnot         ###   ########.fr       */
+/*   Created: 2017/10/07 19:52:52 by gquesnot          #+#    #+#             */
+/*   Updated: 2017/10/08 01:11:45 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
-int		main(int argc, char **argv)
+char			*ft_strnew(size_t size)
 {
-	char c1;
-	int  c;
-	char c2;
+	char		*str;
 
-
-	c1 = 'A';
-	c = (int)c1;
-	c1 = (char)ft_toupper(c);
-	c2 = (char)ft_tolower(c);
-
-	printf("%c\n%c\n",c1, c2);
-
+	str = malloc(size);
+	if (str == NULL)
+		return (NULL);
+	ft_memset(str, 0, size + 1);
+	return (str);
 }

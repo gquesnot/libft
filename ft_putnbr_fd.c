@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 14:55:24 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:32:21 by gquesnot         ###   ########.fr       */
+/*   Created: 2017/10/01 19:36:07 by gquesnot          #+#    #+#             */
+/*   Updated: 2017/10/08 01:08:28 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void		ft_putnbr_fd(int nbr, int fd)
 {
-	char	*s1;
-	char	*s2;
-	char	c1;
-	int		i;
+	long		nb;
 
-
-	i = 0;
-	s1 = (char *)dest;
-	s2 = (char *)src;
-	c1 = (char)c;
-	if (n == 0 || s1 == s2)
-		return (s1);
-	while (n > 0)
+	nb = nbr;
+	if (nb < 0)
+		{
+			nb = -nb;
+			ft_putchar('-');
+		}
+	if (nb >= 10)
 	{
-		*s1 = *s2;
-		if (*s1 == c1)
-			return (dest + i + 1);
-		s1 = s1 + 1;
-		s2 = s2 + 1;
-		i = i + 1;
-		n = n - 1;
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
-	return (NULL);
+	if (nb <= 10)
+		ft_putchar_fd('0' + nb, fd);
 }

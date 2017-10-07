@@ -6,11 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 19:26:43 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 19:32:31 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:34:35 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char		*ft_strcpy(char *dest, const char *src)
 {

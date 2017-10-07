@@ -6,11 +6,11 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 22:10:25 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 22:14:15 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/07 19:34:17 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int			ft_strcmp(const char *s1, const char *s2)
 {
