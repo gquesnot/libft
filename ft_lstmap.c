@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/01 19:36:07 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/08 21:06:15 by gquesnot         ###   ########.fr       */
+/*   Created: 2017/10/08 03:21:31 by gquesnot          #+#    #+#             */
+/*   Updated: 2017/10/09 19:28:04 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putnbr2_fd(int nbr, int fd)
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	nbr = -nbr - 2000000000;
-	ft_putstr_fd("-2", fd);
-	ft_putnbr_fd(nbr, fd);
-}
+	t_list		*new;
+	t_list		*start;
+	t_list		*tmp;
 
-void		ft_putnbr_fd(int nbr, int fd)
-{
-	if (nbr == -2147483648)
-		{
-			ft_putnbr2_fd(nbr, fd);
-			return ;
-		}
-	if (nbr < 0)
-		{
-			nbr = -nbr;
-			ft_putchar_fd('-', fd);
-		}
-	if (nbr >= 10)
+	tmp = f(lst);
+	if (!(new = ft_lstnew(tmp->content, tmp->content_size)))
+		return (NULL);
+	start = new;
+	lst = lst->next;
+	while (lst)
 	{
-		ft_putnbr_fd(nbr / 10, fd);
-		ft_putnbr_fd(nbr % 10, fd);
+		tmp = f(lst);
+		if (!(new->next = ft_lstnew(tmp->content, tmp->content_size)))
+			return (NULL);
+		new = new->next;
+		lst = lst->next;
 	}
-	else
-		ft_putchar_fd('0' + nbr, fd);
+	return (start);
 }

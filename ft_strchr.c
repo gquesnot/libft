@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 20:08:35 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:34:00 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 22:16:56 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ char		*ft_strchr(const char *s, int c)
 	temp = (char)c;
 	if (s == NULL)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == temp)
 			return (char *)(s + i);
 		i = i + 1;
 	}
+	if (s[i] == c)
+		return (char *)(s + i);
 	return (NULL);
 }

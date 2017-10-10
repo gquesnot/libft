@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/07 21:31:26 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/08 00:14:04 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 17:24:54 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char		**ft_add_str_table(char **table, const char *str, int n, int size)
 	i = 0;
 	while (table[i])
 		i += 1;
-	table[i] = ft_strnew(size);
+	table[i] = ft_strnew(size + 1);
 	table[i] = ft_strsub(str, n, size);
 	table[i + 1] = NULL;
 	return (table);

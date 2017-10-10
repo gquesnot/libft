@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/07 21:10:45 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 21:31:16 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 19:57:47 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char		*ft_strtrim(const char *s)
 	start = i;
 	i = 0;
 	size = size - 1;
-	while (s[size - i] == ' ' || s[size - i] == '\t' || s[size - i] == '\n' \
-			|| s[size - i] == ',')
+	while (start + i < size && (s[size - i] == ' ' || s[size - i] == '\t' || s[size - i] == '\n' \
+			|| s[size - i] == ','))
 		i += 1;
 	tmp = ft_strsub(s, start , size - start - i + 1);
 	return (tmp);

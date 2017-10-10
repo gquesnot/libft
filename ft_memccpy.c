@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 14:55:24 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:32:21 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 22:23:29 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	s1 = (char *)dest;
 	s2 = (char *)src;
 	c1 = (char)c;
-	if (n == 0 || s1 == s2)
-		return (s1);
+	if (!n || s1 == s2)
+		return (NULL);
 	while (n > 0)
 	{
 		*s1 = *s2;

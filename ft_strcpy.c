@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 19:26:43 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:34:35 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 13:04:56 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char		*ft_strcpy(char *dest, const char *src)
 	int		i;
 
 	i = 0;
+	if (!(dest) || !(src))
+		return (dest);
 	while (src[i] != '\0')
 	{
 		dest[i] = src[i];

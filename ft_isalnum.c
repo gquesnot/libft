@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 22:34:21 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 22:50:13 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 19:40:40 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			ft_isalnum(int c)
 {
 	if (ft_isdigit(c) + ft_isalpha(c) > 0)
-		return (1);
+		return (8);
 	else
 		return (0);
 

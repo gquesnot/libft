@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/01 19:36:07 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/08 21:06:15 by gquesnot         ###   ########.fr       */
+/*   Created: 2017/10/08 03:12:26 by gquesnot          #+#    #+#             */
+/*   Updated: 2017/10/08 03:21:19 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putnbr2_fd(int nbr, int fd)
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	nbr = -nbr - 2000000000;
-	ft_putstr_fd("-2", fd);
-	ft_putnbr_fd(nbr, fd);
-}
+	t_list		*list;
 
-void		ft_putnbr_fd(int nbr, int fd)
-{
-	if (nbr == -2147483648)
-		{
-			ft_putnbr2_fd(nbr, fd);
-			return ;
-		}
-	if (nbr < 0)
-		{
-			nbr = -nbr;
-			ft_putchar_fd('-', fd);
-		}
-	if (nbr >= 10)
+	while (*alst)
 	{
-		ft_putnbr_fd(nbr / 10, fd);
-		ft_putnbr_fd(nbr % 10, fd);
+		list = (*alst)->next;
+		ft_lstdelone(alst, del);
+		(*alst) = list;
 	}
-	else
-		ft_putchar_fd('0' + nbr, fd);
 }

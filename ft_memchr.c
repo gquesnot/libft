@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 15:43:18 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:32:42 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 19:58:45 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	s1 = (char *)s;
 	c1 = (char)c;
 	i = 0;
-	while(s1[i] && i < n)
+	while(s1 && i < n)
 	{
 		if (s1[i] == c1)
 			return ((void *)(s + i));

@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/08 00:57:42 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/08 01:05:40 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/08 21:06:46 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void		ft_putendl_fd(char const *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	ft_putchar('\n');
+	ft_putchar_fd('\n', fd);
 }

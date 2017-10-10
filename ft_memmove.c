@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 15:18:00 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:33:15 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 20:46:31 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,31 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*s1;
 	char	*s2;
+	size_t		i;
 
-	s1 = (char *)dest;
+	i = 0;
 	s2 = (char *)src;
-	if (s1 < s2)
-		ft_memcpy(s1, s2, n);
+	s1 = (char *)dest;
+	if (!n)
+		return (dest);
+	if (s1 > s2)
+	{
+		i = n;
+		while ((int)i >= 0)
+		{
+		s1[i] = s2[i];
+		 i -= 1;
+		}
+	s1[n] = '\0';
+	}
 	else
 	{
-		while (n > 0)
+		while (i < n)
 		{
-			*(s1 + n) = *(s2 + n);
-			n = n - 1;
+			s1[i] = s2[i];
+			i += 1;
 		}
 	}
+//	s1[n + 1] = '\0';
 	return (dest);
 }

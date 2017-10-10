@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/07 20:51:40 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 20:54:39 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/08 21:09:05 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int			ft_strequ(const char *s1, const char *s2)
 {
-	if (!(s1) || !(s2))
-		return (0);
-	if (ft_strcmp(s1, s2))
-		return (1);
-	return (0);
+	return (ft_strcmp(s1, s2) == 0);
 }

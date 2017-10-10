@@ -6,16 +6,14 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 22:51:28 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 22:54:28 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 22:52:20 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_toupper(int c)
 {
-	char c1;
 
-	c1 = (char)c;
-	if(c1 >= 'a' && c1 <= 'z')
+	if(c >= 97 && c <= 122)
 		return (c - 32);
 	else
 		return (c);

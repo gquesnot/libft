@@ -6,14 +6,14 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 22:38:43 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/09/30 22:41:00 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/09 19:47:37 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int			ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return (1);
+		return (16384);
 	else
 		return (0);
 }
