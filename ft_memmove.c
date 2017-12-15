@@ -1,46 +1,33 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 15:18:00 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/09 20:46:31 by gquesnot         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_memmove.c                                     .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/11/28 13:47:02 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/15 10:40:09 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void			*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*s1;
-	char	*s2;
-	size_t		i;
+	unsigned char		*s1;
+	unsigned char		*s2;
 
-	i = 0;
-	s2 = (char *)src;
-	s1 = (char *)dest;
-	if (!n)
-		return (dest);
+	s2 = (unsigned char *)src;
+	s1 = (unsigned char *)dest;
 	if (s1 > s2)
 	{
-		i = n;
-		while ((int)i >= 0)
+		while (n--)
 		{
-		s1[i] = s2[i];
-		 i -= 1;
+			s1[n] = s2[n];
 		}
-	s1[n] = '\0';
 	}
 	else
-	{
-		while (i < n)
-		{
-			s1[i] = s2[i];
-			i += 1;
-		}
-	}
-//	s1[n + 1] = '\0';
-	return (dest);
+		ft_memcpy(s1, s2, n);
+	return (s1);
 }

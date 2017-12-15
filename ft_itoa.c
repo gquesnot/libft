@@ -1,18 +1,19 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/08 00:14:18 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/09 20:14:42 by gquesnot         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/11/28 13:57:54 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/15 09:11:00 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_is_neg(long *n, int *neg)
+static void		ft_is_neg(long *n, int *neg)
 {
 	if (*n < 0)
 	{
@@ -21,12 +22,12 @@ void		ft_is_neg(long *n, int *neg)
 	}
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*res;
-	long	nb;
-	int		i;
-	int		neg;
+	char		*res;
+	long		nb;
+	int			i;
+	int			neg;
 
 	neg = 0;
 	i = 2;
@@ -35,7 +36,8 @@ char		*ft_itoa(int n)
 	i = i + neg;
 	while (n /= 10)
 		i += 1;
-	res = ft_strnew(i);
+	if ((res = ft_strnew(i - 1)) == NULL)
+		return (NULL);
 	i -= 1;
 	res[i] = '\0';
 	while (i > 0)

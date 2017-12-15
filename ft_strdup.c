@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 19:04:14 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/07 19:35:16 by gquesnot         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_strdup.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/11/28 13:43:21 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/15 10:06:38 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -18,11 +19,10 @@ char		*ft_strdup(const char *s)
 	int		i;
 	int		len;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
-	s1 = (char *)malloc((len + 1) * sizeof(char));
+	if ((s1 = (char *)malloc((len + 1) * sizeof(char))) == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		s1[i] = s[i];

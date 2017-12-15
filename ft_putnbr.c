@@ -1,17 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/01 19:36:07 by gquesnot          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2017/10/16 16:19:55 by gquesnot         ###   ########.fr       */
-=======
-/*   Updated: 2017/10/16 16:34:20 by gquesnot         ###   ########.fr       */
->>>>>>> dc4cc9df6abc11a6917e5908d2619845ffbc4d79
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_putnbr.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/11/28 13:45:49 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/11/28 14:18:40 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -26,15 +23,15 @@ void		ft_putnbr2(int nbr)
 void		ft_putnbr(int nbr)
 {
 	if (nbr == -2147483648)
-		{
-			ft_putnbr2(nbr);
-			return ;
-		}
+	{
+		ft_putnbr2(nbr);
+		return ;
+	}
 	if (nbr < 0)
-		{
-			nbr = -nbr;
-			ft_putchar('-');
-		}
+	{
+		nbr = -nbr;
+		ft_putchar('-');
+	}
 	if (nbr >= 10)
 	{
 		ft_putnbr(nbr / 10);

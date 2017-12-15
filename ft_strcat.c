@@ -1,18 +1,17 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/30 19:33:24 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/09 16:20:13 by gquesnot         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_strcat.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/11/28 13:39:57 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/15 10:07:37 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-
 
 char		*ft_strcat(char *dest, const char *src)
 {
@@ -21,8 +20,6 @@ char		*ft_strcat(char *dest, const char *src)
 
 	j = 0;
 	i = 0;
-	if (!(src))
-		return (dest);
 	while (dest && dest[i] != '\0')
 		i += 1;
 	while (src[j] != '\0')

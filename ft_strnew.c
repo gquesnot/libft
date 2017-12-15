@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/07 19:52:52 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/08 01:11:45 by gquesnot         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_strnew.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/11/28 13:41:08 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/15 09:07:25 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -16,8 +17,7 @@ char			*ft_strnew(size_t size)
 {
 	char		*str;
 
-	str = malloc(size);
-	if (str == NULL)
+	if ((str = malloc((size + 1) * sizeof(char))) == NULL)
 		return (NULL);
 	ft_memset(str, 0, size + 1);
 	return (str);
