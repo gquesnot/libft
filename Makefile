@@ -25,7 +25,8 @@ SRCS	= ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 			ft_strsub.c ft_strsplit.c ft_strnew.c ft_strnequ.c ft_strmapi.c \
 			ft_strmap.c ft_strjoin.c ft_striteri.c ft_striter.c ft_strequ.c \
 			ft_strdel.c ft_strclr.c ft_memdel.c ft_memalloc.c ft_lstnew.c \
-			ft_lstmap.c ft_lstiter.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c
+			ft_lstmap.c ft_lstiter.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
+			get_next_line.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -38,7 +39,7 @@ $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
 
-%.o: %.c $(HEADERS)
+%.o: %.c
 	gcc $(CFLAGS) -c -o $@ $<
 
 clean:

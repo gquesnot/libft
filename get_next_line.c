@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/05 16:33:43 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/12 05:39:59 by gquesnot         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   get_next_line.c                                  .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: gquesnot <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/12/20 13:27:16 by gquesnot     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/20 13:31:39 by gquesnot    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -20,14 +21,15 @@ void			ft_realoc(char **line, char *buff, size_t size)
 	tmp = ft_strnew(size);
 	ft_strcpy(tmp, *line);
 	*line = ft_strnew(size + BUFF_SIZE);
-	ft_strcpy(*line , tmp);
+	ft_strcpy(*line, tmp);
 	ft_strcat(*line, buff);
 }
 
-int			ft_read_size_c(int const fd, char **buff,char to_find, int *error)
+int				ft_read_size_c(int const fd, char **buff, char to_find,\
+		int *error)
 {
-	int		i;
-	char	tmp;
+	int			i;
+	char		tmp;
 
 	i = 0;
 	while ((*error = read(fd, &tmp, 1)))
@@ -44,20 +46,19 @@ int			ft_read_size_c(int const fd, char **buff,char to_find, int *error)
 	return (i);
 }
 
-void		ft_get_next_line(char **line, char *buff, int i)
+void			ft_get_next_line(char **line, char *buff, int i)
 {
 	if (i >= BUFF_SIZE)
-		ft_realoc(line, buff , i + BUFF_SIZE);
+		ft_realoc(line, buff, i + BUFF_SIZE);
 	else
 		ft_strcpy(*line, buff);
 }
 
-
-int			get_next_line(int const fd, char **line)
+int				get_next_line(int const fd, char **line)
 {
-	char	*buff;
-	int		i;
-	int		error;
+	char		*buff;
+	int			i;
+	int			error;
 
 	error = 1;
 	i = 0;
